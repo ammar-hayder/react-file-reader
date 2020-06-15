@@ -1,9 +1,16 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import ReactDOM from 'react-dom';
 import App from './App';
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+import {shallow} from 'enzyme';
+
+describe('App',()=>{
+  const component = shallow(<App />);
+  
+  it("render page heading", () => {
+    let heading = component.find("[data-test-handle='page-heading']");
+    expect(heading.text()).toEqual("Import CSV File!");
+  });
+})
+
+

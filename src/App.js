@@ -47,10 +47,10 @@ class App extends React.Component {
   render() {
     return (
       <div className="App container">
-        <h2>Import CSV File!</h2>
+        <h2 data-test-handle="page-heading">Import CSV File!</h2>
         <div className="form-inline">
           <div className="form-group mb-2">
-            <label for="staticEmail2">Email</label>
+            <label htmlFor="staticEmail2">Upload file</label>
             <input
               className="form-control"
               type="file"
@@ -63,7 +63,7 @@ class App extends React.Component {
             />
           </div>
           <div className="form-group mx-sm-3 mb-2">
-            <label for="inputPassword2">Delimiter</label>
+            <label htmlFor="inputPassword2">Delimiter</label>
             <input
               className="form-control"
               name="delimiter"
@@ -71,7 +71,7 @@ class App extends React.Component {
             />
           </div>
           <div className="form-group mx-sm-3 mb-2">
-            <label for="inputPassword2">Delimiter</label>
+            <label htmlFor="inputPassword2">Rows</label>
             <input
               className="form-control"
               name="row-count"
