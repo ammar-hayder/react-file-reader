@@ -49,8 +49,8 @@ class App extends React.Component {
       <div className="App container">
         <h2 data-test-handle="page-heading">Import CSV File!</h2>
         <div className="form-inline">
-          <div className="form-group mb-2">
-            <label htmlFor="staticEmail2">Upload file</label>
+          <div className="form-group">
+            <label htmlFor="file">Upload file</label>
             <input
               className="form-control"
               type="file"
@@ -59,39 +59,43 @@ class App extends React.Component {
               }}
               name="file"
               placeholder={null}
+              id="file"
               onChange={this.handleChange}
             />
           </div>
           <div className="form-group mx-sm-3 mb-2">
-            <label htmlFor="inputPassword2">Delimiter</label>
+            <label htmlFor="delimiter">Delimiter</label>
             <input
               className="form-control"
               name="delimiter"
               onChange={this.setDelimiter}
+              id="delimiter"
             />
           </div>
+
           <div className="form-group mx-sm-3 mb-2">
-            <label htmlFor="inputPassword2">Rows</label>
+            <label htmlFor="rows">Rows</label>
             <input
               className="form-control"
               name="row-count"
               type="number"
               onChange={this.setRowcount}
+              id="rows"
             />
           </div>
-          <button
-            onClick={this.importCSV}
-            className="btn btn-primary mb-2"
-          >
+          <button onClick={this.importCSV} className="btn btn-primary mb-2">
             Render file
           </button>
+          
         </div>
-       {this.state.tableData &&  <DataTable
-          title="Parsed Data"
-          columns={this.state.columns}
-          data={this.state.tableData}
-          pagination={true}
-        />}
+        {this.state.tableData && (
+          <DataTable
+            title="Parsed Data"
+            columns={this.state.columns}
+            data={this.state.tableData}
+            pagination={true}
+          />
+        )}
       </div>
     );
   }
